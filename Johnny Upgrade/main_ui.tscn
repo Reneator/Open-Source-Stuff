@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgeo33k3pog4i"]
+
+[ext_resource type="Script" path="res://Main_UI.gd" id="1_xv285"]
+[ext_resource type="Script" path="res://Player_Info_Container.gd" id="2_jvhhp"]
+
+[node name="Main_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xv285")
+
+[node name="Kill_Player_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 216.0
+offset_right = 427.0
+offset_bottom = 247.0
+text = "Kill Player"
+
+[node name="Revive_Player_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 272.0
+offset_right = 440.0
+offset_bottom = 303.0
+text = "Revive Player"
+
+[node name="Gain_Soul_Shard_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 334.0
+offset_right = 458.0
+offset_bottom = 365.0
+text = "Gain Soul Shard"
+
+[node name="Player_Info_Panel" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 663.0
+offset_top = 243.0
+offset_right = 763.0
+offset_bottom = 347.0
+script = ExtResource("2_jvhhp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player_Info_Panel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Player_Info_Panel/VBoxContainer"]
+layout_mode = 2
+text = "Player:"
+
+[node name="Player_Is_Alive" type="HBoxContainer" parent="Player_Info_Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Player_Info_Panel/VBoxContainer/Player_Is_Alive"]
+layout_mode = 2
+text = "Is Alive: "
+
+[node name="Alive_Label" type="Label" parent="Player_Info_Panel/VBoxContainer/Player_Is_Alive"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "true"
+horizontal_alignment = 2
+
+[node name="Soul Shard Count" type="HBoxContainer" parent="Player_Info_Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Player_Info_Panel/VBoxContainer/Soul Shard Count"]
+layout_mode = 2
+text = "Soul Shards:"
+
+[node name="Soul Shard Count Label" type="Label" parent="Player_Info_Panel/VBoxContainer/Soul Shard Count"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "true"
+horizontal_alignment = 2
+
+[node name="Soul Shard Pending" type="HBoxContainer" parent="Player_Info_Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Player_Info_Panel/VBoxContainer/Soul Shard Pending"]
+layout_mode = 2
+text = "Pending Soul Shards:"
+
+[node name="Soul_Shards_Pending_Label" type="Label" parent="Player_Info_Panel/VBoxContainer/Soul Shard Pending"]
+layout_mode = 2
+text = "true"
+
+[connection signal="pressed" from="Kill_Player_Button" to="." method="_on_kill_player_button_pressed"]
+[connection signal="pressed" from="Revive_Player_Button" to="." method="_on_revive_player_button_pressed"]
+[connection signal="pressed" from="Gain_Soul_Shard_Button" to="." method="_on_gain_soul_shard_button_pressed"]
