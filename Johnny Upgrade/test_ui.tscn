@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgeo33k3pog4i"]
 
-[ext_resource type="Script" path="res://Main_UI.gd" id="1_xv285"]
-[ext_resource type="Script" path="res://Player_Info_Container.gd" id="2_jvhhp"]
+[ext_resource type="Script" path="res://test_UI.gd" id="1_lr541"]
+[ext_resource type="Script" path="res://Player_Info_Container.gd" id="2_cwqnw"]
 
 [node name="Main_UI" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_xv285")
+script = ExtResource("1_lr541")
 
 [node name="Kill_Player_Button" type="Button" parent="."]
 layout_mode = 0
@@ -42,7 +42,7 @@ offset_left = 663.0
 offset_top = 243.0
 offset_right = 763.0
 offset_bottom = 347.0
-script = ExtResource("2_jvhhp")
+script = ExtResource("2_cwqnw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Player_Info_Panel"]
 layout_mode = 2
