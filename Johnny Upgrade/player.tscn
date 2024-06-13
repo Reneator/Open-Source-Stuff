@@ -1,28 +1,72 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqpuppu5xh3wf"]
+[gd_scene load_steps=8 format=3 uid="uid://dqpuppu5xh3wf"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_cn7sa"]
-[ext_resource type="Texture2D" uid="uid://cop8x8m7yx3cb" path="res://icon.svg" id="2_cdl4f"]
+[ext_resource type="Texture2D" uid="uid://bbpeoohi7rlih" path="res://Assets/Player_Character.png" id="2_g58gu"]
+[ext_resource type="Script" path="res://Player_Attack.gd" id="3_1wrja"]
+
+[sub_resource type="Animation" id="Animation_va3uj"]
+resource_name = "attack"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attack_Area2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_dqklc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attack_Area2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_whjxt"]
+_data = {
+"RESET": SubResource("Animation_dqklc"),
+"attack": SubResource("Animation_va3uj")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_voro1"]
-size = Vector2(128, 128)
+size = Vector2(106, 202)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cn7sa")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_whjxt")
+}
+
 [node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("2_cdl4f")
+scale = Vector2(0.171875, 0.171875)
+texture = ExtResource("2_g58gu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_voro1")
 
 [node name="Attack_Area2D" type="Area2D" parent="."]
 visible = false
 position = Vector2(54, 25)
+script = ExtResource("3_1wrja")
 
 [node name="Polygon2D" type="Polygon2D" parent="Attack_Area2D"]
 polygon = PackedVector2Array(44, -2, 56, -13, 60, -31, 47, -49, 32, -52, 41, -101, 62, -94, 79, -84, 87, -75, 92, -59, 94, -45, 94, -31, 93, -16, 90, -4, 85, 7, 76, 19, 63, 29, 50, 35, 40, 37)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Attack_Area2D"]
 polygon = PackedVector2Array(33, -52, 41, -101, 71, -90, 85, -80, 89, -69, 91, -53, 92, -40, 93, -27, 90, -14, 87, -3, 81, 7, 72, 17, 63, 25, 49, 33, 40, 37, 44, -2, 53, -11, 58, -31, 52, -41)
-
-[connection signal="body_entered" from="Attack_Area2D" to="." method="_on_attack_area_2d_body_entered"]

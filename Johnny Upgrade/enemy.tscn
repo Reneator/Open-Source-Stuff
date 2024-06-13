@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dnvfjfdfivwba"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_4v2xf"]
-[ext_resource type="Texture2D" uid="uid://65atjitpm0py" path="res://enemy.svg" id="1_vloci"]
+[ext_resource type="Texture2D" uid="uid://c0vgr3rc5gv0f" path="res://Assets/slime.png" id="2_rkqao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e81w8"]
 size = Vector2(130, 130)
@@ -14,7 +14,7 @@ script = ExtResource("1_4v2xf")
 
 [node name="Icon" type="Sprite2D" parent="."]
 self_modulate = Color(0.992157, 0.713726, 0.717647, 1)
-texture = ExtResource("1_vloci")
+texture = ExtResource("2_rkqao")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_e81w8")

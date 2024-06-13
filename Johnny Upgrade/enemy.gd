@@ -1,5 +1,5 @@
 extends Character
-class_name Monster
+class_name Enemy
 
 func _on_area_2d_body_entered(body):
 	if not body is Player:
