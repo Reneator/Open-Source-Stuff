@@ -34,4 +34,3 @@ func die():
 func revive():
 	initialize_health()
 	is_alive = true
-
