@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://pvkph6lbd033"]
+
+[ext_resource type="Script" path="res://Player_Attack.gd" id="1_dvbdy"]
+[ext_resource type="Texture2D" uid="uid://o2crfljf64cn" path="res://Assets/attack.png" id="2_tpjbi"]
+
+[node name="Attack_Area2D" type="Area2D"]
+position = Vector2(54, 25)
+script = ExtResource("1_dvbdy")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(44, -2, 56, -13, 60, -31, 47, -49, 32, -52, 41, -101, 62, -94, 79, -84, 87, -75, 92, -59, 94, -45, 94, -31, 93, -16, 90, -4, 85, 7, 76, 19, 63, 29, 50, 35, 40, 37)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(33, -52, 41, -101, 71, -90, 85, -80, 89, -69, 91, -53, 92, -40, 93, -27, 90, -14, 87, -3, 81, 7, 72, 17, 63, 25, 49, 33, 40, 37, 44, -2, 53, -11, 58, -31, 52, -41)
+
+[node name="Attack" type="Sprite2D" parent="."]
+position = Vector2(52, -45)
+scale = Vector2(0.186719, 0.186719)
+texture = ExtResource("2_tpjbi")

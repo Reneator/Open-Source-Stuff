@@ -19,10 +19,20 @@ var soul_shards_pending := 0 #player collects these by completing tasks and defe
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	attack_area.enemy_hit.connect(on_enemy_hit_by_attack)
+	for child in get_children():
+		if not child is Attack_Area:
+			continue
+		child.enemy_hit.connect(on_enemy_hit_by_attack)
+	initialize_hp()
+	Global.player = self
+
+func initialize_hp():
+	health = max_health
 
 func on_enemy_hit_by_attack(enemy : Enemy):
 	attack(enemy)
+
+var last_direction 
 
 func _physics_process(delta):
 	
@@ -30,66 +40,88 @@ func _physics_process(delta):
 	var move_vertical = Input.get_axis("move_up", "move_down")
 	var move_vector = Vector2(move_horizontal, move_vertical).normalized()
 	
-	print("Move_vector: %s" % move_vector)
-	#rotate_player_towards_movement_direction(move_vector)
-
 	velocity = Vector2.ZERO
 	velocity += SPEED * move_vector
 	if not move_vector.length() == 0:
 		set_texture_for_velocity()
+		last_direction = get_view_direction()
 
 	move_and_slide()
 
 var last_degrees
 
 func set_texture_for_velocity():
-	var direction = velocity.normalized()
-	var degrees = rad_to_deg(direction.angle())
-	if last_degrees != null and degrees == last_degrees:
-		#so it doesnt constantly change it after stopping
-		return
-	print("Player move-direction degrees: %s" % degrees)
-	var player_texture = get_texture_for_direction_degrees(degrees)
+	var player_texture = get_texture_for_direction()
+	var direction = get_view_direction()
+	if direction == DIRECTION.LEFT:
+		icon.flip_h = true
+	else:
+		icon.flip_h = false
 	icon.texture = player_texture
 
-func get_texture_for_direction_degrees(degrees):
-	if degrees >= -135 and degrees < -46: #up
-		print("up")
-		return texture_hero_up
-	if degrees >= -46 and degrees < 46: #right
-		icon.flip_h = false
-		print("right")
-		return texture_hero_right
-	if degrees >= 46 and degrees < 135: #down
-		print("down")
-		return texture_hero_down
-	if degrees >= 135 or degrees < -135: #left
-		print("left")
-		icon.flip_h = true
-		return texture_hero_right
+enum DIRECTION{LEFT, RIGHT, DOWN, UP}
 
-func rotate_player_towards_movement_direction(move_vector : Vector2):
-	if move_vector.length() <= 0:
-		return
-	var vector_angle_rad = move_vector.angle()
-	rotation = vector_angle_rad
+func get_texture_for_direction():
+	var direction = get_view_direction()
+	match direction:
+		DIRECTION.UP:
+			return texture_hero_up
+		DIRECTION.DOWN:
+			return texture_hero_down
+		DIRECTION.RIGHT:
+			return texture_hero_right
+		DIRECTION.LEFT:
+			return texture_hero_right
+
+func get_view_direction():
+	var direction = velocity.normalized()
+	var degrees = rad_to_deg(direction.angle())
+	if degrees >= -135 and degrees < -46: #up
+		return DIRECTION.UP
+	if degrees >= -46 and degrees < 46: #right
+		return DIRECTION.RIGHT
+	if degrees >= 46 and degrees < 135: #down
+		return DIRECTION.DOWN
+	if degrees >= 135 or degrees < -135: #left
+		return DIRECTION.LEFT
 
 func _input(event):
 	if event.is_action_pressed("attack"):
 		start_attack()
-	
+
+var is_attacking = false
+var current_attack
 
 func start_attack():
-	animation_player.play("attack")
-	#attack_area.show()
+	if is_attacking:
+		return
+	is_attacking = true
+	get_tree().create_timer(0.5).timeout.connect(stop_attack)
 	
-	#check for bodys in damage area
-	#damage enemies
+	current_attack = get_attack_area()
+	current_attack.show()
 
-#func _on_attack_area_2d_body_entered(body):
-	#if not body is Enemy:
-		#return
-	#attack(body)
+func get_attack_area():
+	var direction = get_view_direction()
+	if velocity.length()<= 0:
+		direction = last_direction
+	match direction:
+		DIRECTION.UP:
+			return $Attack_Top
+		DIRECTION.DOWN:
+			return $Attack_Bottom
+		DIRECTION.RIGHT:
+			return $Attack_Right
+		DIRECTION.LEFT:
+			return $Attack_Left
+	
+
+func stop_attack():
+	if current_attack:
+		current_attack.hide()
+	current_attack = null
+	is_attacking = false
+	
 
 func on_death(origin : Character):
 	print("Player was killed by %s" % origin)

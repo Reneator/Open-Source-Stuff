@@ -1,4 +1,5 @@
 extends Area2D
+class_name Attack_Area
 
 var processed_targets = []
 

@@ -14,6 +14,7 @@ func initialize_health():
 	health = max_health
 
 func damage(damage : float, origin : Character):
+	print("%s got damaged by %s for %d: new health: %d" % [name, origin.name, damage, health])
 	health -= damage
 	if health <= 0:
 		health = 0
