@@ -4,7 +4,7 @@ class_name Player
 @export var texture_hero_right : Texture2D
 @export var texture_hero_down : Texture2D
 @export var texture_hero_up : Texture2D
-
+@export var texture_hero_left : Texture2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -53,10 +53,7 @@ var last_degrees
 func set_texture_for_velocity():
 	var player_texture = get_texture_for_direction()
 	var direction = get_view_direction()
-	if direction == DIRECTION.LEFT:
-		icon.flip_h = true
-	else:
-		icon.flip_h = false
+
 	icon.texture = player_texture
 
 enum DIRECTION{LEFT, RIGHT, DOWN, UP}
@@ -71,7 +68,7 @@ func get_texture_for_direction():
 		DIRECTION.RIGHT:
 			return texture_hero_right
 		DIRECTION.LEFT:
-			return texture_hero_right
+			return texture_hero_left
 
 func get_view_direction():
 	var direction = velocity.normalized()
