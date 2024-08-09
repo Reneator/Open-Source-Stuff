@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://poltyc5xr15n"]
+
+[ext_resource type="PackedScene" uid="uid://dqpuppu5xh3wf" path="res://Characters/player.tscn" id="1_poccv"]
+[ext_resource type="Texture2D" uid="uid://chei74drnl1sx" path="res://Assets/hero_left.png" id="2_j146k"]
+[ext_resource type="PackedScene" uid="uid://dnvfjfdfivwba" path="res://Characters/enemy.tscn" id="2_mx7l0"]
+[ext_resource type="Script" path="res://World/enemy_spawner.gd" id="3_q0p8m"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_poccv")]
+position = Vector2(231, 260)
+texture_hero_left = ExtResource("2_j146k")
+
+[node name="Enemy_Spawner" type="Marker2D" parent="."]
+position = Vector2(681, 281)
+script = ExtResource("3_q0p8m")
+enemy_scene = ExtResource("2_mx7l0")
+
+[node name="Enemy" parent="Enemy_Spawner" instance=ExtResource("2_mx7l0")]

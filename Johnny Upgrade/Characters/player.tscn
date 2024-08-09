@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://dqpuppu5xh3wf"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_cn7sa"]
+[ext_resource type="Script" path="res://Characters/Player.gd" id="1_cn7sa"]
 [ext_resource type="Texture2D" uid="uid://jwdg8ovt63a1" path="res://Assets/hero_right.png" id="2_engle"]
 [ext_resource type="Texture2D" uid="uid://bcqk0cev8ctbd" path="res://Assets/Hero.png" id="3_jx6og"]
 [ext_resource type="Texture2D" uid="uid://bsdwmi7nphk1e" path="res://Assets/hero_up.png" id="4_261rn"]
-[ext_resource type="PackedScene" uid="uid://pvkph6lbd033" path="res://attack_area_2d.tscn" id="4_o8b0x"]
+[ext_resource type="PackedScene" uid="uid://pvkph6lbd033" path="res://Characters/attack_area_2d.tscn" id="4_o8b0x"]
 
 [sub_resource type="Animation" id="Animation_dqklc"]
 length = 0.001

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgeo33k3pog4i"]
 
-[ext_resource type="Script" path="res://test_UI.gd" id="1_lr541"]
-[ext_resource type="Script" path="res://Player_Info_Container.gd" id="2_cwqnw"]
-[ext_resource type="PackedScene" uid="uid://dmxtgeisdtbo1" path="res://hp_bar.tscn" id="3_hyv2l"]
+[ext_resource type="Script" path="res://UI/test_UI.gd" id="1_lr541"]
+[ext_resource type="Script" path="res://Characters/Player_Info_Container.gd" id="2_cwqnw"]
+[ext_resource type="PackedScene" uid="uid://dmxtgeisdtbo1" path="res://UI/hp_bar.tscn" id="3_hyv2l"]
 [ext_resource type="Texture2D" uid="uid://da8b6yf4qa3n0" path="res://Assets/health_bar_glass.png" id="4_2mljm"]
 
 [node name="Main_UI" type="Control"]
@@ -76,14 +76,18 @@ texture_over = ExtResource("4_2mljm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 531.0
-offset_right = 156.0
-offset_bottom = 632.0
+offset_left = 22.0
+offset_top = 464.0
+offset_right = 153.0
+offset_bottom = 600.0
 
 [node name="Kill_Player_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Kill Player"
+
+[node name="Spawn_Enemy_Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Spawn Enemy"
 
 [node name="Revive_Player_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -94,5 +98,6 @@ layout_mode = 2
 text = "Gain Soul Shard"
 
 [connection signal="pressed" from="VBoxContainer/Kill_Player_Button" to="." method="_on_kill_player_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Spawn_Enemy_Button" to="." method="_on_spawn_enemy_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Revive_Player_Button" to="." method="_on_revive_player_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Gain_Soul_Shard_Button" to="." method="_on_gain_soul_shard_button_pressed"]
