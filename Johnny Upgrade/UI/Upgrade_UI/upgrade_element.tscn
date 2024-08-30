@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3mojm7kq2kt"]
+
+[ext_resource type="Texture2D" uid="uid://tgvqbyuft80t" path="res://Assets/Timer_base.png" id="1_sdgsu"]
+[ext_resource type="Texture2D" uid="uid://bjaip1iwjwmip" path="res://Assets/soul_shard_big.png" id="2_ootiu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmmdx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="Theme" id="Theme_ufbbk"]
+
+[node name="Upgrade_Element" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_fmmdx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme = SubResource("Theme_ufbbk")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_sdgsu")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "More time to live"
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ootiu")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Buy"

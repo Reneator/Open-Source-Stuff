@@ -1,0 +1,117 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb5jvufckxuhu"]
+
+[ext_resource type="Texture2D" uid="uid://erbbpdqx7pyw" path="res://Assets/upgrade_tab_background.png" id="1_71s2c"]
+[ext_resource type="Texture2D" uid="uid://tgvqbyuft80t" path="res://Assets/Timer_base.png" id="2_ok6gw"]
+[ext_resource type="Texture2D" uid="uid://bjaip1iwjwmip" path="res://Assets/soul_shard_big.png" id="3_t05k8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m36ie"]
+texture = ExtResource("1_71s2c")
+
+[node name="PanelContainer" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = -230.5
+offset_right = 187.0
+offset_bottom = 230.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_m36ie")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 47
+theme_override_constants/margin_bottom = 8
+
+[node name="Button" type="Label" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Upgrade"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_right = 35
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ok6gw")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "More time to live"
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_t05k8")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Buy"
+
+[node name="Button2" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Upgrade_1
+"
+
+[node name="Button3" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Upgrade_1
+"
+
+[node name="Button4" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Upgrade_1
+"
+
+[node name="Button5" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Upgrade_1
+"
+
+[node name="Button6" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Upgrade_1
+"
+
+[node name="Button7" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Upgrade_1
+"
+
+[node name="Button8" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Upgrade_1
+"
+
+[node name="Button9" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Upgrade_1
+"
+
+[node name="Button10" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Upgrade_1
+"
