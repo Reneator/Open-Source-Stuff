@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dnvfjfdfivwba"]
+[gd_scene load_steps=45 format=3 uid="uid://dnvfjfdfivwba"]
 
 [ext_resource type="Script" path="res://Characters/enemy.gd" id="1_4v2xf"]
 [ext_resource type="Texture2D" uid="uid://ds317crot3v44" path="res://Assets/Slime/Slime_Death/slime_death0001.png" id="2_524v1"]
@@ -182,6 +182,9 @@ size = Vector2(130, 130)
 [sub_resource type="CircleShape2D" id="CircleShape2D_g7plo"]
 radius = 94.4299
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bc6x5"]
+radius = 303.165
+
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_4v2xf")
 
@@ -197,4 +200,12 @@ shape = SubResource("RectangleShape2D_e81w8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_g7plo")
 
+[node name="Player search area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player search area"]
+shape = SubResource("CircleShape2D_bc6x5")
+one_way_collision_margin = 1.5
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Player search area" to="." method="_on_player_search_area_body_entered"]
+[connection signal="body_exited" from="Player search area" to="." method="_on_player_search_area_body_exited"]

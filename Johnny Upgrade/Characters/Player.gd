@@ -132,3 +132,5 @@ func attack(character : Character):
 
 func get_damage():
 	return 1
+func player():
+	pass
