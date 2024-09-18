@@ -42,11 +42,27 @@ func _physics_process(delta):
 	if !dead:
 		$"Player search area/CollisionShape2D".disabled = false
 		if player_in_area:
-			position += (player.position - position) / speed
+			#move_towards_player(delta)
+			new_move_towards_player(delta)
 			
 	if dead:
 		$"Player search area/CollisionShape2D".disabled = true
 
+func move_towards_player(delta):
+	var player_position = player.position
+	var move_vector : Vector2 = player_position - position
+	print("Move vector: %s with player_position: %s monster_position: %s" % [move_vector, player_position, position])
+
+	position += (player.position - position) / speed
+
+func new_move_towards_player(delta):
+	var normalized_vector = player.global_position.direction_to(global_position)
+	
+	var new_move_vector = normalized_vector * speed * delta
+	
+	print("New move vector: %s" % new_move_vector)
+	position -= new_move_vector
+	
 
 func _on_player_search_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
