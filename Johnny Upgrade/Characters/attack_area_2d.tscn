@@ -1,7 +1,58 @@
-[gd_scene load_steps=3 format=3 uid="uid://pvkph6lbd033"]
+[gd_scene load_steps=14 format=3 uid="uid://pvkph6lbd033"]
 
 [ext_resource type="Script" path="res://Characters/Player_Attack.gd" id="1_drd8t"]
-[ext_resource type="Texture2D" uid="uid://o2crfljf64cn" path="res://Assets/attack.png" id="2_j8b36"]
+[ext_resource type="Texture2D" uid="uid://s68gyp8tnoqr" path="res://Assets/attack animation/attack_animation0000.png" id="2_pycdb"]
+[ext_resource type="Texture2D" uid="uid://disgeca27qwua" path="res://Assets/attack animation/attack_animation0001.png" id="3_vw0to"]
+[ext_resource type="Texture2D" uid="uid://blw5kgggidv3x" path="res://Assets/attack animation/attack_animation0002.png" id="4_5rtmx"]
+[ext_resource type="Texture2D" uid="uid://b2eoqimobyb8t" path="res://Assets/attack animation/attack_animation0003.png" id="5_wesfe"]
+[ext_resource type="Texture2D" uid="uid://banncfuafamdh" path="res://Assets/attack animation/attack_animation0004.png" id="6_gh8fi"]
+[ext_resource type="Texture2D" uid="uid://b8f3o5iv0nbgi" path="res://Assets/attack animation/attack_animation0005.png" id="7_ll06d"]
+[ext_resource type="Texture2D" uid="uid://0kjkyqqyg0h7" path="res://Assets/attack animation/attack_animation0006.png" id="8_xsae4"]
+[ext_resource type="Texture2D" uid="uid://164vjdqfxpip" path="res://Assets/attack animation/attack_animation0007.png" id="9_o2rc0"]
+[ext_resource type="Texture2D" uid="uid://brwikcnr2qeqj" path="res://Assets/attack animation/attack_animation0008.png" id="10_1ae50"]
+[ext_resource type="Texture2D" uid="uid://4gvv3tv86ds1" path="res://Assets/attack animation/attack_animation0009.png" id="11_q33rv"]
+[ext_resource type="Texture2D" uid="uid://dp5mw76bcjv8w" path="res://Assets/attack animation/attack_animation0010.png" id="12_e0x3j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ncgxf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pycdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vw0to")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5rtmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wesfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gh8fi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ll06d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xsae4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_o2rc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1ae50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_q33rv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_e0x3j")
+}],
+"loop": false,
+"name": &"default",
+"speed": 25.0
+}]
 
 [node name="Attack_Area2D" type="Area2D"]
 position = Vector2(54, 25)
@@ -14,7 +65,9 @@ polygon = PackedVector2Array(44, -2, 56, -13, 60, -31, 47, -49, 32, -52, 41, -10
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(33, -52, 41, -101, 71, -90, 85, -80, 89, -69, 91, -53, 92, -40, 93, -27, 90, -14, 87, -3, 81, 7, 72, 17, 63, 25, 49, 33, 40, 37, 44, -2, 53, -11, 58, -31, 52, -41)
 
-[node name="Attack" type="Sprite2D" parent="."]
+[node name="Attack" type="AnimatedSprite2D" parent="."]
 position = Vector2(52, -45)
 scale = Vector2(0.186719, 0.186719)
-texture = ExtResource("2_j8b36")
+sprite_frames = SubResource("SpriteFrames_ncgxf")
+frame = 10
+frame_progress = 1.0
