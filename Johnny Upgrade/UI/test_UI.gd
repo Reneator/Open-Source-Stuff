@@ -18,3 +18,8 @@ func _on_gain_soul_shard_button_pressed():
 
 func _on_spawn_enemy_button_pressed() -> void:
 	Events.spawn_enemy.emit()
+
+
+func _on_open_upgrade_ui_button_pressed() -> void:
+	$Upgrade_UI.show()
+	pass # Replace with function body.
