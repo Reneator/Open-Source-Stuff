@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgeo33k3pog4i"]
+[gd_scene load_steps=6 format=3 uid="uid://bgeo33k3pog4i"]
 
 [ext_resource type="Script" path="res://UI/test_UI.gd" id="1_lr541"]
 [ext_resource type="Script" path="res://Characters/Player_Info_Container.gd" id="2_cwqnw"]
 [ext_resource type="PackedScene" uid="uid://dmxtgeisdtbo1" path="res://UI/hp_bar.tscn" id="3_hyv2l"]
 [ext_resource type="Texture2D" uid="uid://da8b6yf4qa3n0" path="res://Assets/health_bar_glass.png" id="4_2mljm"]
+[ext_resource type="PackedScene" uid="uid://cb5jvufckxuhu" path="res://UI/Upgrade_UI/Upgrade_UI.tscn" id="5_3uiyf"]
 
 [node name="Main_UI" type="Control"]
 layout_mode = 3
@@ -97,7 +98,19 @@ text = "Revive Player"
 layout_mode = 2
 text = "Gain Soul Shard"
 
+[node name="Open_Upgrade_UI_Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Upgrade UI"
+
+[node name="Upgrade_UI" parent="." instance=ExtResource("5_3uiyf")]
+layout_mode = 1
+offset_left = -187.0
+offset_top = -214.0
+offset_right = 187.0
+offset_bottom = 214.0
+
 [connection signal="pressed" from="VBoxContainer/Kill_Player_Button" to="." method="_on_kill_player_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Spawn_Enemy_Button" to="." method="_on_spawn_enemy_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Revive_Player_Button" to="." method="_on_revive_player_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Gain_Soul_Shard_Button" to="." method="_on_gain_soul_shard_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Open_Upgrade_UI_Button" to="." method="_on_open_upgrade_ui_button_pressed"]

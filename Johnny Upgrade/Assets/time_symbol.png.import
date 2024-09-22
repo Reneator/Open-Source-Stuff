@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tgvqbyuft80t"
-path="res://.godot/imported/Timer_base.png-9da6eb67337eb063d7ac144af74ca827.ctex"
+uid="uid://pqxw8uaykfpe"
+path="res://.godot/imported/time_symbol.png-384dc61efd36abc79c6c1a12e6dfc982.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Timer_base.png"
-dest_files=["res://.godot/imported/Timer_base.png-9da6eb67337eb063d7ac144af74ca827.ctex"]
+source_file="res://Assets/time_symbol.png"
+dest_files=["res://.godot/imported/time_symbol.png-384dc61efd36abc79c6c1a12e6dfc982.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
