@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqpuppu5xh3wf"]
+[gd_scene load_steps=11 format=3 uid="uid://dqpuppu5xh3wf"]
 
 [ext_resource type="Script" path="res://Characters/Player.gd" id="1_cn7sa"]
 [ext_resource type="Texture2D" uid="uid://jwdg8ovt63a1" path="res://Assets/hero_right.png" id="2_engle"]
 [ext_resource type="Texture2D" uid="uid://bcqk0cev8ctbd" path="res://Assets/Hero.png" id="3_jx6og"]
 [ext_resource type="Texture2D" uid="uid://bsdwmi7nphk1e" path="res://Assets/hero_up.png" id="4_261rn"]
 [ext_resource type="PackedScene" uid="uid://pvkph6lbd033" path="res://Characters/attack_area_2d.tscn" id="4_o8b0x"]
+[ext_resource type="PackedScene" uid="uid://dea1v8habyybk" path="res://Characters/attack_area_2d_left.tscn" id="6_m4111"]
 
 [sub_resource type="Animation" id="Animation_dqklc"]
 length = 0.001
@@ -68,11 +69,6 @@ shape = SubResource("RectangleShape2D_voro1")
 [node name="Attack_Right" parent="." instance=ExtResource("4_o8b0x")]
 visible = false
 
-[node name="Attack_Left" parent="." instance=ExtResource("4_o8b0x")]
-visible = false
-position = Vector2(-47, -28)
-rotation = -2.96942
-
 [node name="Attack_Bottom" parent="." instance=ExtResource("4_o8b0x")]
 visible = false
 position = Vector2(-28, 67)
@@ -82,3 +78,7 @@ rotation = 1.57514
 visible = false
 position = Vector2(12, -35)
 rotation = -1.16652
+
+[node name="Attack_Left" parent="." instance=ExtResource("6_m4111")]
+visible = false
+position = Vector2(-107, -9)

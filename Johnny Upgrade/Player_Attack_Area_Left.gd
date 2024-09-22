@@ -1,7 +1,7 @@
 extends Area2D
-class_name Attack_Area_rest
+class_name Attack_Area_left
 
-@onready var attack_sprite : AnimatedSprite2D = $Attack
+@onready var attack_sprite : AnimatedSprite2D = $Attack_Left
 var processed_targets = []
 
 signal enemy_hit(enemy)
@@ -12,7 +12,7 @@ func _ready():
 func on_visibility_changed():
 	if not visible:
 		clear_targets()
-	attack_sprite.play()
+	attack_sprite.play("attack_left")
 
 
 func clear_targets():

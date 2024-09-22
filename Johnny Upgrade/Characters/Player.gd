@@ -9,6 +9,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 @onready var attack_area = $Attack_Area2D
+@onready var attack_area_left =$Attack_Area2D_Left
 @onready var animation_player = $AnimationPlayer
 @onready var icon = $Icon
 
@@ -20,8 +21,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	for child in get_children():
-		if not child is Attack_Area:
+		if not child is Attack_Area_rest:
 			continue
+		else:
+			if not child is Attack_Area_left:
+				continue
 		child.enemy_hit.connect(on_enemy_hit_by_attack)
 	initialize_hp()
 	Global.player = self

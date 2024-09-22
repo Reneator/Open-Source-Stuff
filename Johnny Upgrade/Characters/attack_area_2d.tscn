@@ -1,73 +1,69 @@
 [gd_scene load_steps=14 format=3 uid="uid://pvkph6lbd033"]
 
 [ext_resource type="Script" path="res://Characters/Player_Attack.gd" id="1_drd8t"]
-[ext_resource type="Texture2D" uid="uid://s68gyp8tnoqr" path="res://Assets/attack animation/attack_animation0000.png" id="2_pycdb"]
-[ext_resource type="Texture2D" uid="uid://disgeca27qwua" path="res://Assets/attack animation/attack_animation0001.png" id="3_vw0to"]
-[ext_resource type="Texture2D" uid="uid://blw5kgggidv3x" path="res://Assets/attack animation/attack_animation0002.png" id="4_5rtmx"]
-[ext_resource type="Texture2D" uid="uid://b2eoqimobyb8t" path="res://Assets/attack animation/attack_animation0003.png" id="5_wesfe"]
-[ext_resource type="Texture2D" uid="uid://banncfuafamdh" path="res://Assets/attack animation/attack_animation0004.png" id="6_gh8fi"]
-[ext_resource type="Texture2D" uid="uid://b8f3o5iv0nbgi" path="res://Assets/attack animation/attack_animation0005.png" id="7_ll06d"]
-[ext_resource type="Texture2D" uid="uid://0kjkyqqyg0h7" path="res://Assets/attack animation/attack_animation0006.png" id="8_xsae4"]
-[ext_resource type="Texture2D" uid="uid://164vjdqfxpip" path="res://Assets/attack animation/attack_animation0007.png" id="9_o2rc0"]
-[ext_resource type="Texture2D" uid="uid://brwikcnr2qeqj" path="res://Assets/attack animation/attack_animation0008.png" id="10_1ae50"]
-[ext_resource type="Texture2D" uid="uid://4gvv3tv86ds1" path="res://Assets/attack animation/attack_animation0009.png" id="11_q33rv"]
-[ext_resource type="Texture2D" uid="uid://dp5mw76bcjv8w" path="res://Assets/attack animation/attack_animation0010.png" id="12_e0x3j"]
+[ext_resource type="Texture2D" uid="uid://cbn4ij4g3qsyh" path="res://Assets/Attack/attack_animation0000.png" id="2_mpj24"]
+[ext_resource type="Texture2D" uid="uid://4fo4odguun32" path="res://Assets/Attack/attack_animation0001.png" id="3_147r3"]
+[ext_resource type="Texture2D" uid="uid://i2o3jt20e2a" path="res://Assets/Attack/attack_animation0002.png" id="4_sgeqv"]
+[ext_resource type="Texture2D" uid="uid://dadbuujnyi8qp" path="res://Assets/Attack/attack_animation0003.png" id="5_g0h7a"]
+[ext_resource type="Texture2D" uid="uid://djkn8j6ve2pyh" path="res://Assets/Attack/attack_animation0004.png" id="6_aqbq8"]
+[ext_resource type="Texture2D" uid="uid://624nlhwrcjik" path="res://Assets/Attack/attack_animation0005.png" id="7_qrl6r"]
+[ext_resource type="Texture2D" uid="uid://os13cnl8fk5t" path="res://Assets/Attack/attack_animation0006.png" id="8_cb0l2"]
+[ext_resource type="Texture2D" uid="uid://cqr4bopny1fii" path="res://Assets/Attack/attack_animation0007.png" id="9_b0e2y"]
+[ext_resource type="Texture2D" uid="uid://dyx47krxr3ums" path="res://Assets/Attack/attack_animation0008.png" id="10_eyn7x"]
+[ext_resource type="Texture2D" uid="uid://5teou8spkrqp" path="res://Assets/Attack/attack_animation0009.png" id="11_xhn1b"]
+[ext_resource type="Texture2D" uid="uid://b06eugjfbfav4" path="res://Assets/Attack/attack_animation0010.png" id="12_vvn8u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ncgxf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pycdb")
+"texture": ExtResource("2_mpj24")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_vw0to")
+"texture": ExtResource("3_147r3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_5rtmx")
+"texture": ExtResource("4_sgeqv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_wesfe")
+"texture": ExtResource("5_g0h7a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_gh8fi")
+"texture": ExtResource("6_aqbq8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_ll06d")
+"texture": ExtResource("7_qrl6r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_xsae4")
+"texture": ExtResource("8_cb0l2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_o2rc0")
+"texture": ExtResource("9_b0e2y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_1ae50")
+"texture": ExtResource("10_eyn7x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_q33rv")
+"texture": ExtResource("11_xhn1b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_e0x3j")
+"texture": ExtResource("12_vvn8u")
 }],
-"loop": false,
-"name": &"default",
-"speed": 25.0
+"loop": true,
+"name": &"attack_animation",
+"speed": 15.0
 }]
 
 [node name="Attack_Area2D" type="Area2D"]
 position = Vector2(54, 25)
 script = ExtResource("1_drd8t")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-visible = false
-polygon = PackedVector2Array(44, -2, 56, -13, 60, -31, 47, -49, 32, -52, 41, -101, 62, -94, 79, -84, 87, -75, 92, -59, 94, -45, 94, -31, 93, -16, 90, -4, 85, 7, 76, 19, 63, 29, 50, 35, 40, 37)
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(33, -52, 41, -101, 71, -90, 85, -80, 89, -69, 91, -53, 92, -40, 93, -27, 90, -14, 87, -3, 81, 7, 72, 17, 63, 25, 49, 33, 40, 37, 44, -2, 53, -11, 58, -31, 52, -41)
+polygon = PackedVector2Array(58, -45, 34, -88, 57, -84, 77, -71, 102, -44, 103, -18, 96, 9, 90, 17, 73, 26, 64, 22, 56, 10)
 
 [node name="Attack" type="AnimatedSprite2D" parent="."]
-position = Vector2(52, -45)
+position = Vector2(67, -32)
 scale = Vector2(0.186719, 0.186719)
 sprite_frames = SubResource("SpriteFrames_ncgxf")
-frame = 10
-frame_progress = 1.0
+animation = &"attack_animation"
+frame = 5

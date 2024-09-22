@@ -8,7 +8,7 @@
 [node name="Level" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_poccv")]
-position = Vector2(231, 260)
+position = Vector2(179, 297)
 texture_hero_left = ExtResource("2_j146k")
 
 [node name="Enemy_Spawner" type="Marker2D" parent="."]
@@ -17,3 +17,5 @@ script = ExtResource("3_q0p8m")
 enemy_scene = ExtResource("2_mx7l0")
 
 [node name="Enemy" parent="Enemy_Spawner" instance=ExtResource("2_mx7l0")]
+position = Vector2(-4, 0)
+up_direction = Vector2(0.707107, -0.707107)

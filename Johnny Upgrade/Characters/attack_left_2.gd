@@ -1,7 +1,8 @@
 extends Area2D
-class_name Attack_Area_rest
+class_name Attack_Area
 
-@onready var attack_sprite : AnimatedSprite2D = $Attack
+
+@onready var attack_sprite : AnimatedSprite2D = $Left_Attack
 var processed_targets = []
 
 signal enemy_hit(enemy)
