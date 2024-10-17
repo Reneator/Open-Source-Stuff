@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3twb6ly8wg2b"]
+
+[ext_resource type="Script" path="res://System/Dialogues/dialogues.gd" id="1_2qwgo"]
+[ext_resource type="Script" path="res://System/Dialogues/dialogue.gd" id="2_m2bwv"]
+
+[node name="Dialogues" type="Node"]
+script = ExtResource("1_2qwgo")
+
+[node name="Dialogue 1" type="Node" parent="."]
+script = ExtResource("2_m2bwv")
+dialog_texts = Array[String](["This is the first sentence that would show up in the dialogue", "This would be the second sentence that would show up in the dialogue"])
+
+[node name="Dialogue 2" type="Node" parent="."]
+script = ExtResource("2_m2bwv")
+dialog_texts = Array[String](["Hello", "Good bye", "What did you say to me you li"])
