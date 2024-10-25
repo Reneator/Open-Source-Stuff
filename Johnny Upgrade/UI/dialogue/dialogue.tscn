@@ -1,12 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://rj7ukahh0h0s"]
+[gd_scene load_steps=3 format=3 uid="uid://rj7ukahh0h0s"]
 
 [ext_resource type="Texture2D" uid="uid://u041dn3k5n0x" path="res://Assets/Death.png" id="1_8ypgp"]
+[ext_resource type="PackedScene" uid="uid://dej3nu8w8pw6w" path="res://UI/dialogues.tscn" id="2_7e4b1"]
 
 [node name="Dialogue" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = 22.0
+offset_right = -13.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -43,7 +48,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
-text = "I greet you dead one!"
+text = "Welcome to the afterlife, son of Adam. I understand your confusion, death is something unusual to normal people."
 fit_content = true
 
 [node name="Control" type="Control" parent="PanelContainer"]
@@ -57,3 +62,5 @@ offset_top = -12.0
 offset_right = 328.0
 offset_bottom = 11.0
 text = "DEATH"
+
+[node name="Dialogues" parent="." instance=ExtResource("2_7e4b1")]
