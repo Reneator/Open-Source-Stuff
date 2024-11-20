@@ -1,10 +1,14 @@
 extends Control
 
 
-@onready var player := Player.new()
+var player : Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Events.player_initialized.connect(on_player_initialized)
+
+func on_player_initialized(_player):
+	player = _player
 	$Player_Info_Panel.player = player
 
 func _on_kill_player_button_pressed():

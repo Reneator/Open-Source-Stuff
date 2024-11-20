@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx8au1akxevv4"]
+
+[ext_resource type="Script" path="res://System/soul_shard_drops/soul_shard_drop.gd" id="1_f8n08"]
+[ext_resource type="Texture2D" uid="uid://bjaip1iwjwmip" path="res://Assets/soul_shard_big.png" id="1_if136"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qa7rn"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(30, 30, 1)
+orbit_velocity_min = -0.0419999
+orbit_velocity_max = 0.0620001
+color = Color(0.682079, 0.708194, 0.978767, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_olung"]
+radius = 20.0
+height = 66.0
+
+[node name="SoulShardDrop" type="Node2D"]
+script = ExtResource("1_f8n08")
+
+[node name="SoulShardBig" type="Sprite2D" parent="."]
+position = Vector2(-2, 6)
+texture = ExtResource("1_if136")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_qa7rn")
+local_coords = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_olung")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

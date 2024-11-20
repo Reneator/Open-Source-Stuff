@@ -24,7 +24,8 @@ func _ready():
 		child.enemy_hit.connect(on_enemy_hit_by_attack)
 	initialize_hp()
 	Global.player = self
-
+	Events.player_initialized.emit(self)
+	
 func initialize_hp():
 	health = max_health
 
@@ -131,5 +132,7 @@ func attack(character : Character):
 
 func get_damage():
 	return 1
-func player():
-	pass
+
+func pick_up_soul_shard(count):
+	soul_shards_pending+= count
+	
