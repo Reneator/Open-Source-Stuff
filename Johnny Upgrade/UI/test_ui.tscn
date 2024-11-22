@@ -77,14 +77,18 @@ texture_over = ExtResource("4_2mljm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 22.0
-offset_top = 464.0
-offset_right = 153.0
-offset_bottom = 600.0
+offset_left = 6.0
+offset_top = 393.0
+offset_right = 171.0
+offset_bottom = 599.0
 
 [node name="Kill_Player_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Kill Player"
+
+[node name="Respawn_Soul_Shard" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Respawn Soul Shard"
 
 [node name="Spawn_Enemy_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -110,6 +114,7 @@ offset_right = 187.0
 offset_bottom = 214.0
 
 [connection signal="pressed" from="VBoxContainer/Kill_Player_Button" to="." method="_on_kill_player_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Respawn_Soul_Shard" to="." method="_on_respawn_soul_shard_pressed"]
 [connection signal="pressed" from="VBoxContainer/Spawn_Enemy_Button" to="." method="_on_spawn_enemy_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Revive_Player_Button" to="." method="_on_revive_player_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Gain_Soul_Shard_Button" to="." method="_on_gain_soul_shard_button_pressed"]
