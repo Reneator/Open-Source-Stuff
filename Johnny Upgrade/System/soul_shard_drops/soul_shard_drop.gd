@@ -11,6 +11,8 @@ var last_played_anim
 
 func _ready():
 	animated_sprite.animation_finished.connect(on_animation_finished)
+	animated_sprite.play("drop")
+	last_played_anim = "drop"
 
 
 
@@ -23,10 +25,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	player.pick_up_soul_shard(soul_shard_value)
 	is_picked_up = true
 	sprite.hide()
-	last_played_anim = "perish"
+	last_played_anim = "pickup"
 	animated_sprite.play(last_played_anim)
 
 func on_animation_finished():
-	if last_played_anim == "perish":
+	if last_played_anim == "pickup":
 		queue_free()
+	animated_sprite.play("default")
 	last_played_anim = null

@@ -1,14 +1,22 @@
-[gd_scene load_steps=18 format=3 uid="uid://cx8au1akxevv4"]
+[gd_scene load_steps=26 format=3 uid="uid://cx8au1akxevv4"]
 
 [ext_resource type="Script" path="res://System/soul_shard_drops/soul_shard_drop.gd" id="1_f8n08"]
 [ext_resource type="Texture2D" uid="uid://bjaip1iwjwmip" path="res://Assets/soul_shard_big.png" id="1_if136"]
 [ext_resource type="Texture2D" uid="uid://cba86yr0xy1dh" path="res://Assets/Soul shard/soul shard perish/soul_shard_pickup0000.png" id="3_vricj"]
+[ext_resource type="Texture2D" uid="uid://d4mn38x4o8av0" path="res://Assets/Soul shard/soul shard drop/soul_shard_drop0007.png" id="3_yy1lk"]
+[ext_resource type="Texture2D" uid="uid://85jw7v6jj5qv" path="res://Assets/Soul shard/soul shard drop/soul_shard_drop0000.png" id="4_151hf"]
 [ext_resource type="Texture2D" uid="uid://brepik5s15i13" path="res://Assets/Soul shard/soul shard perish/soul_shard_pickup0001.png" id="4_c7lfk"]
 [ext_resource type="Texture2D" uid="uid://cas4b3pv1ogek" path="res://Assets/Soul shard/soul shard perish/soul_shard_pickup0002.png" id="5_g7aka"]
+[ext_resource type="Texture2D" uid="uid://vktd82x64swm" path="res://Assets/Soul shard/soul shard drop/soul_shard_drop0001.png" id="5_gw8b3"]
+[ext_resource type="Texture2D" uid="uid://ifjlxhxtltw7" path="res://Assets/Soul shard/soul shard drop/soul_shard_drop0002.png" id="6_lbt76"]
 [ext_resource type="Texture2D" uid="uid://cea1lb8x134xn" path="res://Assets/Soul shard/soul shard perish/soul_shard_pickup0003.png" id="6_tbowf"]
+[ext_resource type="Texture2D" uid="uid://dbsueq0nd0mye" path="res://Assets/Soul shard/soul shard drop/soul_shard_drop0003.png" id="7_c0gub"]
 [ext_resource type="Texture2D" uid="uid://b16grl653xuq2" path="res://Assets/Soul shard/soul shard perish/soul_shard_pickup0004.png" id="7_do08m"]
 [ext_resource type="Texture2D" uid="uid://dy7hts6t7kica" path="res://Assets/Soul shard/soul shard perish/soul_shard_pickup0005.png" id="8_tg8hn"]
+[ext_resource type="Texture2D" uid="uid://cj33ygertoa6w" path="res://Assets/Soul shard/soul shard drop/soul_shard_drop0004.png" id="8_u8138"]
+[ext_resource type="Texture2D" uid="uid://d26hu7sli1wi7" path="res://Assets/Soul shard/soul shard drop/soul_shard_drop0005.png" id="9_34c2g"]
 [ext_resource type="Texture2D" uid="uid://birsv4y7j4o7r" path="res://Assets/Soul shard/soul shard perish/soul_shard_pickup0006.png" id="9_jk1gh"]
+[ext_resource type="Texture2D" uid="uid://dnyn7gun128u3" path="res://Assets/Soul shard/soul shard drop/soul_shard_drop0006.png" id="10_pqrq8"]
 [ext_resource type="Texture2D" uid="uid://dy23e7u1cx1l0" path="res://Assets/Soul shard/soul shard perish/soul_shard_pickup0007.png" id="10_vaqrn"]
 [ext_resource type="Texture2D" uid="uid://bd33sg4iewjjs" path="res://Assets/Soul shard/soul shard perish/soul_shard_pickup0008.png" id="11_lmd7h"]
 [ext_resource type="Texture2D" uid="uid://b6jf4gv41evc3" path="res://Assets/Soul shard/soul shard perish/soul_shard_pickup0009.png" id="12_562po"]
@@ -29,10 +37,42 @@ height = 66.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_46eq4"]
 animations = [{
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vricj")
+}],
+"loop": false,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_151hf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gw8b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lbt76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_c0gub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_u8138")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_34c2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pqrq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yy1lk")
+}],
+"loop": false,
+"name": &"drop",
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -72,14 +112,15 @@ animations = [{
 "texture": ExtResource("14_y7had")
 }],
 "loop": false,
-"name": &"perish",
-"speed": 15.0
+"name": &"pickup",
+"speed": 20.0
 }]
 
 [node name="SoulShardDrop" type="Node2D"]
 script = ExtResource("1_f8n08")
 
 [node name="SoulShardBig" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-2, 6)
 texture = ExtResource("1_if136")
 
@@ -95,8 +136,5 @@ shape = SubResource("CapsuleShape2D_olung")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_46eq4")
-animation = &"perish"
-frame = 11
-frame_progress = 1.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
