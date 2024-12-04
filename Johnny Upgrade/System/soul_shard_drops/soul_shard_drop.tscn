@@ -1,9 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://cx8au1akxevv4"]
+[gd_scene load_steps=25 format=3 uid="uid://cx8au1akxevv4"]
 
 [ext_resource type="Script" path="res://System/soul_shard_drops/soul_shard_drop.gd" id="1_f8n08"]
 [ext_resource type="Texture2D" uid="uid://bjaip1iwjwmip" path="res://Assets/soul_shard_big.png" id="1_if136"]
 [ext_resource type="Texture2D" uid="uid://cba86yr0xy1dh" path="res://Assets/Soul shard/soul shard perish/soul_shard_pickup0000.png" id="3_vricj"]
-[ext_resource type="Texture2D" uid="uid://d4mn38x4o8av0" path="res://Assets/Soul shard/soul shard drop/soul_shard_drop0007.png" id="3_yy1lk"]
 [ext_resource type="Texture2D" uid="uid://85jw7v6jj5qv" path="res://Assets/Soul shard/soul shard drop/soul_shard_drop0000.png" id="4_151hf"]
 [ext_resource type="Texture2D" uid="uid://brepik5s15i13" path="res://Assets/Soul shard/soul shard perish/soul_shard_pickup0001.png" id="4_c7lfk"]
 [ext_resource type="Texture2D" uid="uid://cas4b3pv1ogek" path="res://Assets/Soul shard/soul shard perish/soul_shard_pickup0002.png" id="5_g7aka"]
@@ -66,9 +65,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_pqrq8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_yy1lk")
 }],
 "loop": false,
 "name": &"drop",
@@ -136,5 +132,6 @@ shape = SubResource("CapsuleShape2D_olung")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_46eq4")
+animation = &"drop"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
