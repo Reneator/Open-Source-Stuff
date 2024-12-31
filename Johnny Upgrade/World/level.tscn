@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://poltyc5xr15n"]
+[gd_scene load_steps=8 format=3 uid="uid://poltyc5xr15n"]
 
 [ext_resource type="PackedScene" uid="uid://dqpuppu5xh3wf" path="res://Characters/player.tscn" id="1_poccv"]
 [ext_resource type="Texture2D" uid="uid://chei74drnl1sx" path="res://Assets/hero_left.png" id="2_j146k"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://World/enemy_spawner.gd" id="3_q0p8m"]
 [ext_resource type="Script" path="res://World/soul_shard_spawner.gd" id="5_ngtb0"]
 [ext_resource type="PackedScene" uid="uid://cx8au1akxevv4" path="res://System/soul_shard_drops/soul_shard_drop.tscn" id="6_crmfo"]
+[ext_resource type="PackedScene" uid="uid://c4son0jhckib6" path="res://Characters/bush_enemy.tscn" id="7_gtb5n"]
 
 [node name="Level" type="Node2D"]
 
@@ -26,3 +27,6 @@ up_direction = Vector2(0.707107, -0.707107)
 position = Vector2(309, 423)
 script = ExtResource("5_ngtb0")
 soul_shard_scene = ExtResource("6_crmfo")
+
+[node name="Bush_enemy" parent="." instance=ExtResource("7_gtb5n")]
+position = Vector2(934, 378)

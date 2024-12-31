@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcct5adoye0sm"
-path="res://.godot/imported/bush_monster.png-1d0456d3371f7be36c0497057f68de70.ctex"
+uid="uid://c2167m3rpnq6r"
+path="res://.godot/imported/bush_monster_death.png-5154878feb2a18990782249ae0113a44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/bush_monster.png"
-dest_files=["res://.godot/imported/bush_monster.png-1d0456d3371f7be36c0497057f68de70.ctex"]
+source_file="res://Assets/Bush monster/bush_monster_death.png"
+dest_files=["res://.godot/imported/bush_monster_death.png-5154878feb2a18990782249ae0113a44.ctex"]
 
 [params]
 

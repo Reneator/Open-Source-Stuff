@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dnvfjfdfivwba"]
+[gd_scene load_steps=46 format=3 uid="uid://dnvfjfdfivwba"]
 
 [ext_resource type="Script" path="res://Characters/enemy.gd" id="1_4v2xf"]
 [ext_resource type="Texture2D" uid="uid://ds317crot3v44" path="res://Assets/Slime/Slime_Death/slime_death0001.png" id="2_524v1"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://riryhik55wkn" path="res://Assets/Slime/Slime_Death/slime_death0017.png" id="18_kl3vq"]
 [ext_resource type="Texture2D" uid="uid://ddftoqty1yerg" path="res://Assets/Slime/Slime_Death/slime_death0018.png" id="19_7l5me"]
 [ext_resource type="Texture2D" uid="uid://dhpx1fgw7i60h" path="res://Assets/Slime/Slime_Death/slime_death0019.png" id="20_m5ibu"]
+[ext_resource type="Texture2D" uid="uid://c0vgr3rc5gv0f" path="res://Assets/slime.png" id="21_0ato2"]
 [ext_resource type="Texture2D" uid="uid://bjkwl6l8xaea6" path="res://Assets/Slime/Slime_Move/slime0001.png" id="21_3w5js"]
 [ext_resource type="Texture2D" uid="uid://i2tw0ikp2jy7" path="res://Assets/Slime/Slime_Move/slime0002.png" id="22_qdl5i"]
 [ext_resource type="Texture2D" uid="uid://ddvvhl8b6pv1r" path="res://Assets/Slime/Slime_Move/slime0003.png" id="23_l350u"]
@@ -105,7 +106,10 @@ animations = [{
 "name": &"death",
 "speed": 30.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_0ato2")
+}],
 "loop": true,
 "name": &"default",
 "speed": 5.0
@@ -190,7 +194,6 @@ script = ExtResource("1_4v2xf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pmhhf")
-animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_e81w8")

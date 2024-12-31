@@ -4,7 +4,7 @@ class_name Attack_Area_rest
 @onready var attack_sprite : AnimatedSprite2D = $Attack
 var processed_targets = []
 
-signal enemy_hit(enemy)
+signal enemy_hit(character)
 
 func _ready():
 	visibility_changed.connect(on_visibility_changed)
