@@ -46,7 +46,8 @@ func enter_burrowed_state():
 	state = State.BURROWED
 	animated_sprite.play("burrowed")
 	print("Bushenemy is burrowed!")
-
+	get_node("CollisionShape2D").disabled = true  
+	get_node("CollisionShape2D2").disabled = false  
 func move_to_position(delta):
 	if is_dying or not burrowed_position or is_on_cooldown:
 		return
@@ -64,11 +65,13 @@ func exit_burrowed_state():
 	animated_sprite.play("default")
 	start_cooldown()
 	print("Bushenemy exited burrowed state.")
-
+	get_node("CollisionShape2D").disabled = false  
+	get_node("CollisionShape2D2").disabled = true  
+	
 func start_cooldown():
 	is_on_cooldown = true
 	print("Cooldown started.")
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(4.0).timeout
 	is_on_cooldown = false
 	print("Cooldown finished. Bushenemy can burrow again.")
 

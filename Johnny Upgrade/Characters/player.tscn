@@ -45,7 +45,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_voro1"]
-size = Vector2(106, 202)
+size = Vector2(88, 168)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cn7sa")
@@ -63,7 +63,7 @@ scale = Vector2(0.171875, 0.171875)
 texture = ExtResource("3_jx6og")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 0)
+position = Vector2(-3, -8)
 shape = SubResource("RectangleShape2D_voro1")
 
 [node name="Attack_Right" parent="." instance=ExtResource("4_o8b0x")]
