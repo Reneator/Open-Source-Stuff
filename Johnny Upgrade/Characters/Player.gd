@@ -1,6 +1,5 @@
 extends Character
 class_name Player
-
 @export var texture_hero_right : Texture2D
 @export var texture_hero_down : Texture2D
 @export var texture_hero_up : Texture2D
@@ -10,7 +9,11 @@ const JUMP_VELOCITY = -400.0
 
 @onready var animation_player = $AnimationPlayer
 @onready var icon = $Icon
+@onready var camera_height: int = 640
+@onready var camera_limit_lower: int = 640
+@onready var camera_limit_upper: int = 0
 
+signal change_camera_pos
 
 var soul_shard_count := 0 #the spendable sould shards the player can spend on upgrades after death
 var soul_shards_pending := 0 #player collects these by completing tasks and defeating monsters
@@ -47,8 +50,18 @@ func _physics_process(delta):
 		last_direction = get_view_direction()
 
 	move_and_slide()
-
+	move_camera_to_match_player()
 var last_degrees
+
+func move_camera_to_match_player():
+	if position.y < camera_limit_upper:
+		camera_limit_lower -= camera_height
+		camera_limit_upper -= camera_height
+		change_camera_pos.emit(camera_limit_upper)
+	if position.y > camera_limit_lower:
+		camera_limit_lower += camera_height
+		camera_limit_upper += camera_height
+		change_camera_pos.emit(camera_limit_upper)
 
 func set_texture_for_velocity():
 	var player_texture = get_texture_for_direction()

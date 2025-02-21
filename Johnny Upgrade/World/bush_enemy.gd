@@ -30,7 +30,6 @@ func _physics_process(delta):
 		State.BURROWED:
 			if is_burrowed:
 				move_to_position(delta)
-
 func start_tracking():
 	if is_dying or is_on_cooldown:
 		return
@@ -46,8 +45,8 @@ func enter_burrowed_state():
 	state = State.BURROWED
 	animated_sprite.play("burrowed")
 	print("Bushenemy is burrowed!")
-	get_node("CollisionShape2D").disabled = true  
-	get_node("CollisionShape2D2").disabled = false  
+	$CollisionShape2D.disabled = true  
+	$CollisionShape2D2.disabled = false   
 func move_to_position(delta):
 	if is_dying or not burrowed_position or is_on_cooldown:
 		return
@@ -65,8 +64,8 @@ func exit_burrowed_state():
 	animated_sprite.play("default")
 	start_cooldown()
 	print("Bushenemy exited burrowed state.")
-	get_node("CollisionShape2D").disabled = false  
-	get_node("CollisionShape2D2").disabled = true  
+	$CollisionShape2D.disabled = false  
+	$CollisionShape2D2.disabled = true  
 	
 func start_cooldown():
 	is_on_cooldown = true
@@ -89,6 +88,12 @@ func on_animation_finished():
 	if animated_sprite.animation == "death":
 		queue_free()
 
+func _on_player_Area2D_entered(body: Node2D):
+	if not is_dying and is_burrowed:
+		get_damage()
+		exit_burrowed_state()
+		
+		
 func on_death(origin: Character):
 	if is_dying:
 		return

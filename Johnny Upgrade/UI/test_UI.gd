@@ -12,7 +12,7 @@ func on_player_initialized(_player):
 	$Player_Info_Panel.player = player
 
 func _on_kill_player_button_pressed():
-	player.die()
+	player.death()
 
 func _on_revive_player_button_pressed():
 	player.revive()

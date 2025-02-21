@@ -13,7 +13,7 @@ func _ready():
 func initialize_health():
 	health = max_health
 
-func damage(damage : float, origin : Character):
+func damage(damage : float, origin: Character):
 	print("%s got damaged by %s for %d: new health: %d" % [name, origin.name, damage, health])
 	health -= damage
 	if health <= 0:
@@ -21,7 +21,7 @@ func damage(damage : float, origin : Character):
 		die()
 		on_death(origin)
 
-func on_death(origin : Character):
+func on_death(origin):
 	pass
 
 func get_damage():

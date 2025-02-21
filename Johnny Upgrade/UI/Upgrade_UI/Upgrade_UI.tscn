@@ -72,7 +72,7 @@ tooltip = "With more damage you will be able to defeat your enemies much faster.
 [node name="Upgrade_Element4" parent="VBoxContainer/MarginContainer2/VBoxContainer" instance=ExtResource("3_k2slt")]
 layout_mode = 2
 icon = ExtResource("7_c5ny6")
-title = "More Faster"
+title = "More Speed"
 shard_cost = 15
 tooltip = "Allows you to move faster, to dodge those pesky enemy attacks or get further in the same amount of time."
 

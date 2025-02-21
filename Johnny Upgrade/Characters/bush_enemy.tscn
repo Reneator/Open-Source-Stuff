@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://c2167m3rpnq6r" path="res://Assets/Bush monster/bush_monster_death.png" id="3_0llus"]
 [ext_resource type="Texture2D" uid="uid://d26ugb1bjubxv" path="res://Assets/Bush monster/bush_monster.png" id="3_3kgic"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1sp6o"]
+size = Vector2(191, 41)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_s4fjp"]
 animations = [{
 "frames": [{
@@ -33,25 +36,27 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yyhfq"]
-size = Vector2(201, 176)
+size = Vector2(196, 164)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8eyb"]
 size = Vector2(176, 201)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_auy6h"]
-radius = 303.165
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1sp6o"]
-size = Vector2(193, 46)
+radius = 354.023
 
 [node name="Bush_enemy" type="CharacterBody2D"]
 script = ExtResource("1_dag4q")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 65.5)
+shape = SubResource("RectangleShape2D_1sp6o")
+disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_s4fjp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
+position = Vector2(1, 4)
 shape = SubResource("RectangleShape2D_yyhfq")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -67,11 +72,6 @@ shape = SubResource("RectangleShape2D_t8eyb")
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_auy6h")
 one_way_collision_margin = 1.5
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(4.5, 66)
-shape = SubResource("RectangleShape2D_1sp6o")
-disabled = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Player search area" to="." method="_on_player_search_area_body_entered"]
