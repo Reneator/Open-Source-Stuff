@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3twb6ly8wg2b"]
 
-[ext_resource type="Script" path="res://System/Dialogues/dialogues.gd" id="1_2qwgo"]
-[ext_resource type="Script" path="res://System/Dialogues/dialogue.gd" id="2_m2bwv"]
+[ext_resource type="Script" uid="uid://cecia71e3bb5b" path="res://System/Dialogues/dialogues.gd" id="1_2qwgo"]
+[ext_resource type="Script" uid="uid://c7fk2l4phfjrt" path="res://System/Dialogues/dialogue.gd" id="2_m2bwv"]
 
 [node name="Dialogues" type="Node"]
 script = ExtResource("1_2qwgo")

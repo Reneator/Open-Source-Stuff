@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d3mojm7kq2kt"]
 
-[ext_resource type="Script" path="res://UI/Upgrade_UI/upgrade_element.gd" id="1_januy"]
+[ext_resource type="Script" uid="uid://8rwrh2txyk16" path="res://UI/Upgrade_UI/upgrade_element.gd" id="1_januy"]
 [ext_resource type="Texture2D" uid="uid://tgvqbyuft80t" path="res://Assets/Timer_base.png" id="1_sdgsu"]
 [ext_resource type="Texture2D" uid="uid://bjaip1iwjwmip" path="res://Assets/soul_shard_big.png" id="2_ootiu"]
 

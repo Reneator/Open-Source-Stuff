@@ -1,22 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgeo33k3pog4i"]
 
-[ext_resource type="Script" path="res://UI/test_UI.gd" id="1_lr541"]
-[ext_resource type="Script" path="res://Characters/Player_Info_Container.gd" id="2_cwqnw"]
+[ext_resource type="Script" uid="uid://b6sai35udpv2" path="res://UI/test_UI.gd" id="1_lr541"]
+[ext_resource type="Script" uid="uid://bptxuimhr30k5" path="res://Characters/Player_Info_Container.gd" id="2_cwqnw"]
 [ext_resource type="PackedScene" uid="uid://dmxtgeisdtbo1" path="res://UI/hp_bar.tscn" id="3_hyv2l"]
 [ext_resource type="Texture2D" uid="uid://da8b6yf4qa3n0" path="res://Assets/health_bar_glass.png" id="4_2mljm"]
 [ext_resource type="PackedScene" uid="uid://cb5jvufckxuhu" path="res://UI/Upgrade_UI/Upgrade_UI.tscn" id="5_3uiyf"]
 
-[node name="Main_UI" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Main_UI" type="CanvasLayer"]
 script = ExtResource("1_lr541")
 
 [node name="Player_Info_Panel" type="PanelContainer" parent="."]
-layout_mode = 0
 offset_left = 940.0
 offset_top = 15.0
 offset_right = 1139.0
@@ -68,7 +61,6 @@ layout_mode = 2
 text = "true"
 
 [node name="TextureProgressBar" parent="." instance=ExtResource("3_hyv2l")]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 355.0
@@ -76,7 +68,6 @@ offset_bottom = 189.0
 texture_over = ExtResource("4_2mljm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
 offset_left = 6.0
 offset_top = 393.0
 offset_right = 171.0
@@ -107,7 +98,6 @@ layout_mode = 2
 text = "Upgrade UI"
 
 [node name="Upgrade_UI" parent="." instance=ExtResource("5_3uiyf")]
-layout_mode = 1
 offset_left = -187.0
 offset_top = -214.0
 offset_right = 187.0

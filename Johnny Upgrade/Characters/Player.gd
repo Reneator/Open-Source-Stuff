@@ -51,6 +51,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 	move_camera_to_match_player()
+	
 var last_degrees
 
 func move_camera_to_match_player():

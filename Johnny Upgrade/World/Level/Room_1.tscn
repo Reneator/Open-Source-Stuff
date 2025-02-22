@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://vgvx78caqx0o"]
+
+[ext_resource type="Texture2D" uid="uid://bdlkralgn5ept" path="res://Assets/background 1.png" id="1_6i1hw"]
+[ext_resource type="Script" uid="uid://bom70jx6nhgv1" path="res://World/Level/room.gd" id="1_xjd0b"]
+[ext_resource type="PackedScene" uid="uid://dqpuppu5xh3wf" path="res://Characters/player.tscn" id="2_k1ncq"]
+[ext_resource type="Script" uid="uid://hmhtpnuhs641" path="res://World/Level/player_spawn.gd" id="3_k1ncq"]
+[ext_resource type="PackedScene" uid="uid://cjk3v80b28xau" path="res://World/Level/door.tscn" id="5_86vt4"]
+
+[node name="Room1" type="Node2D"]
+script = ExtResource("1_xjd0b")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_6i1hw")
+expand_mode = 2
+
+[node name="Player" parent="." instance=ExtResource("2_k1ncq")]
+position = Vector2(576, 333)
+
+[node name="Player_Spawn" type="Marker2D" parent="."]
+position = Vector2(295, 364)
+script = ExtResource("3_k1ncq")
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Door" parent="Doors" instance=ExtResource("5_86vt4")]
+position = Vector2(572, 13)
+door_orientation = "North"
+leads_to_room = "room_2"

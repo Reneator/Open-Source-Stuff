@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://dea1v8habyybk"]
 
-[ext_resource type="Script" path="res://Player_Attack_Area_Left.gd" id="1_85c1l"]
+[ext_resource type="Script" uid="uid://cj0t4p3hrbim8" path="res://Player_Attack_Area_Left.gd" id="1_85c1l"]
 [ext_resource type="Texture2D" uid="uid://cbn4ij4g3qsyh" path="res://Assets/Attack/attack_animation0000.png" id="2_mglef"]
 [ext_resource type="Texture2D" uid="uid://4fo4odguun32" path="res://Assets/Attack/attack_animation0001.png" id="3_sqwa6"]
 [ext_resource type="Texture2D" uid="uid://i2o3jt20e2a" path="res://Assets/Attack/attack_animation0002.png" id="4_odqgu"]

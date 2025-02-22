@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://cx8au1akxevv4"]
 
-[ext_resource type="Script" path="res://System/soul_shard_drops/soul_shard_drop.gd" id="1_f8n08"]
+[ext_resource type="Script" uid="uid://hn6kpor8doaw" path="res://System/soul_shard_drops/soul_shard_drop.gd" id="1_f8n08"]
 [ext_resource type="Texture2D" uid="uid://bjaip1iwjwmip" path="res://Assets/soul_shard_big.png" id="1_if136"]
 [ext_resource type="Texture2D" uid="uid://cba86yr0xy1dh" path="res://Assets/Soul shard/soul shard perish/soul_shard_pickup0000.png" id="3_vricj"]
 [ext_resource type="Texture2D" uid="uid://85jw7v6jj5qv" path="res://Assets/Soul shard/soul shard drop/soul_shard_drop0000.png" id="4_151hf"]
@@ -122,8 +122,8 @@ texture = ExtResource("1_if136")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_qa7rn")
 local_coords = true
+process_material = SubResource("ParticleProcessMaterial_qa7rn")
 
 [node name="Area2D" type="Area2D" parent="."]
 

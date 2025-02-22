@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cb5jvufckxuhu"]
 
 [ext_resource type="Texture2D" uid="uid://erbbpdqx7pyw" path="res://Assets/upgrade_tab_background.png" id="1_71s2c"]
-[ext_resource type="Script" path="res://UI/Upgrade_UI/upgrade_ui.gd" id="2_fjbho"]
+[ext_resource type="Script" uid="uid://b357lpg0js81w" path="res://UI/Upgrade_UI/upgrade_ui.gd" id="2_fjbho"]
 [ext_resource type="PackedScene" uid="uid://d3mojm7kq2kt" path="res://UI/Upgrade_UI/upgrade_element.tscn" id="3_k2slt"]
 [ext_resource type="Texture2D" uid="uid://pqxw8uaykfpe" path="res://Assets/time_symbol.png" id="4_kl7ae"]
 [ext_resource type="Texture2D" uid="uid://b1hs0stsqsclx" path="res://Assets/health_symbol.png" id="5_abent"]

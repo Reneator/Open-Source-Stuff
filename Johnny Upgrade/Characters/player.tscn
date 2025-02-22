@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqpuppu5xh3wf"]
+[gd_scene load_steps=12 format=3 uid="uid://dqpuppu5xh3wf"]
 
-[ext_resource type="Script" path="res://Characters/Player.gd" id="1_cn7sa"]
+[ext_resource type="Script" uid="uid://bdtxbyqtynfog" path="res://Characters/Player.gd" id="1_cn7sa"]
 [ext_resource type="Texture2D" uid="uid://jwdg8ovt63a1" path="res://Assets/hero_right.png" id="2_engle"]
 [ext_resource type="Texture2D" uid="uid://bcqk0cev8ctbd" path="res://Assets/Hero.png" id="3_jx6og"]
 [ext_resource type="Texture2D" uid="uid://bsdwmi7nphk1e" path="res://Assets/hero_up.png" id="4_261rn"]
 [ext_resource type="PackedScene" uid="uid://pvkph6lbd033" path="res://Characters/attack_area_2d.tscn" id="4_o8b0x"]
+[ext_resource type="Texture2D" uid="uid://chei74drnl1sx" path="res://Assets/hero_left.png" id="5_p728j"]
 [ext_resource type="PackedScene" uid="uid://dea1v8habyybk" path="res://Characters/attack_area_2d_left.tscn" id="6_m4111"]
 
 [sub_resource type="Animation" id="Animation_dqklc"]
@@ -40,22 +41,23 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_whjxt"]
 _data = {
-"RESET": SubResource("Animation_dqklc"),
-"attack": SubResource("Animation_va3uj")
+&"RESET": SubResource("Animation_dqklc"),
+&"attack": SubResource("Animation_va3uj")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5gas"]
-size = Vector2(65, 169)
+size = Vector2(65, 64)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cn7sa")
 texture_hero_right = ExtResource("2_engle")
 texture_hero_down = ExtResource("3_jx6og")
 texture_hero_up = ExtResource("4_261rn")
+texture_hero_left = ExtResource("5_p728j")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_whjxt")
+&"": SubResource("AnimationLibrary_whjxt")
 }
 
 [node name="Icon" type="Sprite2D" parent="."]
@@ -63,7 +65,7 @@ scale = Vector2(0.171875, 0.171875)
 texture = ExtResource("3_jx6og")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -8.5)
+position = Vector2(0.5, 44)
 shape = SubResource("RectangleShape2D_l5gas")
 
 [node name="Attack_Right" parent="." instance=ExtResource("4_o8b0x")]

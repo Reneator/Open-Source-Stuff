@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://c4son0jhckib6"]
 
-[ext_resource type="Script" path="res://World/bush_enemy.gd" id="1_dag4q"]
+[ext_resource type="Script" uid="uid://b2448278aj87x" path="res://World/bush_enemy.gd" id="1_dag4q"]
 [ext_resource type="Texture2D" uid="uid://b1ci4ryva0mbn" path="res://Assets/Bush monster/bush_monster_burrowed.png" id="2_nalt8"]
 [ext_resource type="Texture2D" uid="uid://c2167m3rpnq6r" path="res://Assets/Bush monster/bush_monster_death.png" id="3_0llus"]
 [ext_resource type="Texture2D" uid="uid://d26ugb1bjubxv" path="res://Assets/Bush monster/bush_monster.png" id="3_3kgic"]
