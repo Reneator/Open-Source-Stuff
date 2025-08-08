@@ -50,19 +50,8 @@ func _physics_process(delta):
 		last_direction = get_view_direction()
 
 	move_and_slide()
-	move_camera_to_match_player()
 	
 var last_degrees
-
-func move_camera_to_match_player():
-	if position.y < camera_limit_upper:
-		camera_limit_lower -= camera_height
-		camera_limit_upper -= camera_height
-		change_camera_pos.emit(camera_limit_upper)
-	if position.y > camera_limit_lower:
-		camera_limit_lower += camera_height
-		camera_limit_upper += camera_height
-		change_camera_pos.emit(camera_limit_upper)
 
 func set_texture_for_velocity():
 	var player_texture = get_texture_for_direction()

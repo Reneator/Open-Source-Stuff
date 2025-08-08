@@ -9,7 +9,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
-func _on_player_change_camera_pos(player_pos) -> void:
-	$Camera2D.position.y = player_pos

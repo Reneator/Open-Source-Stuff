@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://yxsfi4pm4pbi"]
 
 [ext_resource type="PackedScene" uid="uid://bgeo33k3pog4i" path="res://UI/test_ui.tscn" id="1_sccuf"]
-[ext_resource type="PackedScene" uid="uid://poltyc5xr15n" path="res://World/level.tscn" id="2_f3bok"]
+[ext_resource type="PackedScene" uid="uid://f06tyusd3ugx" path="res://World/Level/Level.tscn" id="2_0xm2m"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -12,10 +12,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Level" parent="." instance=ExtResource("2_f3bok")]
-position = Vector2(0, 1)
-
 [node name="Main_UI" parent="." instance=ExtResource("1_sccuf")]
-layout_mode = 1
-offset_left = 2.0
-offset_right = 2.0
+
+[node name="Level2" parent="." instance=ExtResource("2_0xm2m")]
