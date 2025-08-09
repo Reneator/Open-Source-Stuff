@@ -2,7 +2,7 @@ extends Node2D
 
 @export var room_1_scene : PackedScene
 @export var room_2_scene : PackedScene
-@export var player_scene : PackedScene
+@export var room_3_scene : PackedScene
 
 var current_room : Room
 

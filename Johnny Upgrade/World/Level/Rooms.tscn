@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://bhemmnmyqb5kq" path="res://World/Level/rooms.gd" id="1_lawyd"]
 [ext_resource type="PackedScene" uid="uid://vgvx78caqx0o" path="res://World/Level/Room_1.tscn" id="2_4x341"]
 [ext_resource type="PackedScene" uid="uid://blhclj12h6g4k" path="res://World/Level/Room_2.tscn" id="3_uqgs1"]
-[ext_resource type="PackedScene" uid="uid://poltyc5xr15n" path="res://World/level.tscn" id="4_4x341"]
+[ext_resource type="PackedScene" uid="uid://cktdplnxslvd2" path="res://World/Level/Room_3.tscn" id="4_4x341"]
 
 [node name="Rooms" type="Node"]
 script = ExtResource("1_lawyd")
 room_1_scene = ExtResource("2_4x341")
 room_2_scene = ExtResource("3_uqgs1")
-player_scene = ExtResource("4_4x341")
+room_3_scene = ExtResource("4_4x341")
