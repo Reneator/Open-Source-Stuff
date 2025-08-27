@@ -1,4 +1,5 @@
 extends Node
+var spawnpoint = ""
 
 @export var room_1_scene : PackedScene
 @export var room_2_scene : PackedScene

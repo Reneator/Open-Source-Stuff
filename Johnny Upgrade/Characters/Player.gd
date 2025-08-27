@@ -28,7 +28,12 @@ func _ready():
 	initialize_hp()
 	Global.player = self
 	Events.player_initialized.emit(self)
-	
+	await get_tree().process_frame
+	var spawnpoints = get_tree().get_nodes_in_group("spawnpoints")
+	for spawnpoint in spawnpoints:
+		if spawnpoint.name == Rooms.spawnpoint:
+			global_position = spawnpoint.global_position
+			break
 func initialize_hp():
 	health = max_health
 

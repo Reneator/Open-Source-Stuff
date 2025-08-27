@@ -25,6 +25,10 @@ Rooms="*res://World/Level/Rooms.tscn"
 
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+spawnpoints="for spawnpoints"
+
 [input]
 
 move_left={

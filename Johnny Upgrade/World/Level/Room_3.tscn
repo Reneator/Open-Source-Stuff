@@ -28,3 +28,7 @@ script = ExtResource("3_nq7mh")
 [node name="Door" parent="Doors" instance=ExtResource("2_m2si1")]
 position = Vector2(574, 637)
 leads_to_room = "room_2"
+spawnpoint = "north_room_2"
+
+[node name="south_room_3" type="Marker2D" parent="." groups=["spawnpoints"]]
+position = Vector2(579, 540)

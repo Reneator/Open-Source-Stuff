@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://vgvx78caqx0o"]
+[gd_scene load_steps=7 format=3 uid="uid://vgvx78caqx0o"]
 
 [ext_resource type="Texture2D" uid="uid://bdlkralgn5ept" path="res://Assets/background 1.png" id="1_6i1hw"]
 [ext_resource type="Script" uid="uid://bom70jx6nhgv1" path="res://World/Level/room.gd" id="1_xjd0b"]
 [ext_resource type="PackedScene" uid="uid://dqpuppu5xh3wf" path="res://Characters/player.tscn" id="2_k1ncq"]
 [ext_resource type="Script" uid="uid://hmhtpnuhs641" path="res://World/Level/player_spawn.gd" id="3_k1ncq"]
 [ext_resource type="PackedScene" uid="uid://cjk3v80b28xau" path="res://World/Level/door.tscn" id="5_86vt4"]
+[ext_resource type="PackedScene" uid="uid://c4son0jhckib6" path="res://Characters/bush_enemy.tscn" id="6_nxtcj"]
 
 [node name="Room1" type="Node2D"]
 script = ExtResource("1_xjd0b")
@@ -28,3 +29,16 @@ script = ExtResource("3_k1ncq")
 position = Vector2(572, 13)
 door_orientation = "North"
 leads_to_room = "room_2"
+spawnpoint = "south_room_2"
+
+[node name="Bush_enemy" parent="." instance=ExtResource("6_nxtcj")]
+position = Vector2(875, 348)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-1, -20)
+polygon = PackedVector2Array(74, 20, 76, 662, 1085, 665, 1084, 17, 1151, 2, 1157, 684, 3, 685, 10, -10, 1152, 2, 1084, 24, 74, 19)
+
+[node name="north_room_1" type="Marker2D" parent="." groups=["spawnpoints"]]
+position = Vector2(580, 75)
